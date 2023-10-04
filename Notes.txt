@@ -1,0 +1,22 @@
+
+
+step 1 
+    - import 
+        - express
+        - mongoose
+        - body-parser
+step 2
+    - setup middlewares
+step 3
+    - create configuration file
+    - import in server file to connect db
+step 4
+    - open connection with mongodb
+    - setup db and collection
+step 5
+    - create a model and define schema since we are using mongoose
+        - Model folder > Create Model file
+        - import mongoose
+        - import Schema class
+        - defining Schema
+        - export Model of the schema
