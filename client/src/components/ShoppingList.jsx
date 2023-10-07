@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 
 class  ShoppingList extends Component {
       componentDidMount(){
+          console.log('componentDidMount of ShoppingList comp- ',this.props.getItems());
     this.props.getItems();
    }
    handleDelete = (id) => {
@@ -42,14 +43,14 @@ class  ShoppingList extends Component {
               </Button> */}
               <ListGroup>
                   <TransitionGroup className='shopping-list'>
-                      {items.map(({id, name})=>(
-                          <CSSTransition key={id} classNames='fade' timeout={500}>
+                      {items.map(({_id, name})=>(
+                      <CSSTransition key={_id} classNames='fade' timeout={500}>
                           <ListGroupItem>
                               <Button
                               color='danger'
                               className='remove-btn'
                               size='sm'
-                              onClick={this.handleDelete.bind(this, id)}>&times;</Button>
+                              onClick={this.handleDelete.bind(this, _id)}>&times;</Button>
                               {name}
                           </ListGroupItem>
                       </CSSTransition>
@@ -66,9 +67,10 @@ class  ShoppingList extends Component {
 //     getItems: PropTypes.func.isRequired,
 //     item: PropTypes.object.isRequired
 // }
-const mapStateToProps = (state) =>({
-    item: state.item
-})
+const mapStateToProps = (state) =>{
+    console.log('inside mapStateToProps of ShoppingList comp- ', state.item);
+   return {item: state.item}
+}
 
 // export default ShoppingList
 export default connect(mapStateToProps, {getItems, deleteItem})(ShoppingList)

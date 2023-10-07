@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Modal, ModalHeader, ModalBody, Form, Input} from 'reactstrap';
-import {v4 as uuidv4} from 'uuid';
+// import {v4 as uuidv4} from 'uuid';
 import {addItem} from './actions/itemActions'
 import { connect } from 'react-redux';
 
@@ -24,7 +24,7 @@ class ItemModel extends Component {
         
         //create new item object
         const newItem = {
-            id: uuidv4(),
+            // id: uuidv4(),
             name: this.state.name
         }
         // add item 
